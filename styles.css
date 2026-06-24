@@ -1,0 +1,77 @@
+/* styles.css — Reset, variables, and accessible styles */
+:root{
+  --bg: #f4f4f4;
+  --surface: #ffffff;
+  --text: #222831; /* darker for contrast */
+  --muted: #6b7280;
+  --brand: #3498db;
+  --brand-dark: #2980b9;
+  --accent: #2c3e50;
+  --max-width: 900px;
+  --base-font: 16px;
+}
+
+/* Simple reset */
+*,
+*::before,
+*::after{ box-sizing: border-box; }
+html{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size:16px; }
+body{
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  max-width: var(--max-width);
+  margin: 1.25rem auto;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+h1{ text-align: center; color: var(--accent); font-size: 1.75rem; margin-top: 0; }
+
+h2{ color: var(--brand); font-size: 1.125rem; margin-bottom: 0.5rem; }
+
+p, li{ color: var(--text); font-size: 1rem; }
+
+ul{ padding-left: 1.25rem; }
+
+/* Code block */
+pre.code-block{
+  background-color: #f1f5f9;
+  padding: 1rem;
+  border-left: 4px solid var(--brand);
+  overflow-x: auto;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size: 0.95rem;
+}
+
+/* Button / link */
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: white;
+  background-color: var(--brand);
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+}
+
+.btn:hover{ background-color: var(--brand-dark); }
+
+/* Focus styles for accessibility */
+a:focus,
+.btn:focus{ outline: 3px solid rgba(52,152,219,0.25); outline-offset: 3px; }
+
+/* Responsive tweaks */
+@media (max-width: 520px){
+  .container{ margin: 0.75rem; padding: 0.85rem; }
+  h1{ font-size: 1.4rem; }
+}
